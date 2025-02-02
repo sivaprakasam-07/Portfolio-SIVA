@@ -20,14 +20,14 @@ const Contact = ({ sectionsRef }) => {
     e.preventDefault();
 
     emailjs.send(
-      'service_y1gnv2u', // Replace with your EmailJS service ID
-      'template_jwhy6ns', // Replace with your EmailJS template ID
+      'service_y1gnv2u',
+      'template_jwhy6ns',
       formData,
-      'xkgZSVdJepB1yAoap' // Replace with your EmailJS user ID
+      'xkgZSVdJepB1yAoap'
     )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        toast.success('Message sent successfully!');
+        toast.success('Message sent successfully! 🎉');
         setFormData({
           name: '',
           email: '',
@@ -36,7 +36,7 @@ const Contact = ({ sectionsRef }) => {
       })
       .catch((err) => {
         console.error('FAILED...', err);
-        toast.error('Failed to send message. Please try again later.');
+        toast.error('Failed to send message. Please try again later. ❌');
       });
   };
 
@@ -51,16 +51,16 @@ const Contact = ({ sectionsRef }) => {
     <section id="contact" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-900 to-black">
       <div className="container mx-auto px-6">
         <h2 className="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
-          Get In Touch
+          Get In Touch 📬
         </h2>
-        <div className="max-w-4xl mx-auto glass-effect rounded-2xl overflow-hidden">
+        <div className="max-w-3xl mx-auto glass-effect rounded-2xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 bg-black/30">
-              <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                Contact Information
+              <h3 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                About Me 👨‍💻
               </h3>
-              <p className="text-gray-300 mb-8">
-                Feel free to reach out! I'll get back to you as soon as possible.
+              <p className="text-gray-300 mb-14">
+                Hi, I'm Sivaprakasam T, a passionate MERN stack developer 💻 with a strong focus on creating user-friendly and efficient web applications. 🚀 If you have any queries, collaboration ideas, or just want to say hi, feel free to reach out! 😊
               </p>
               <div className="space-y-6">
                 <a
@@ -70,7 +70,7 @@ const Contact = ({ sectionsRef }) => {
                   className="flex items-center gap-4 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                 >
                   <Github size={24} />
-                  GitHub Profile
+                  <span>GitHub Profile 🌟</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/sivaprakasam-coder/"
@@ -79,18 +79,18 @@ const Contact = ({ sectionsRef }) => {
                   className="flex items-center gap-4 text-gray-300 hover:text-blue-400 transition-colors duration-300"
                 >
                   <Linkedin size={24} />
-                  LinkedIn Profile
+                  <span>LinkedIn Profile 🔗</span>
                 </a>
               </div>
             </div>
-            <form onSubmit={handleSubmit} className="p-8">
+            <form onSubmit={handleSubmit} className="p-8 w-full max-w-md mx-auto">
               <div className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Name
+                    Name ✍️
                   </label>
                   <input
                     type="text"
@@ -107,7 +107,7 @@ const Contact = ({ sectionsRef }) => {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Email
+                    Email 📧
                   </label>
                   <input
                     type="email"
@@ -124,7 +124,7 @@ const Contact = ({ sectionsRef }) => {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Message
+                    Message 💬
                   </label>
                   <textarea
                     id="message"
@@ -141,7 +141,7 @@ const Contact = ({ sectionsRef }) => {
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
                 >
                   <Send size={20} />
-                  Send Message
+                  Send Message 🚀
                 </button>
               </div>
             </form>
