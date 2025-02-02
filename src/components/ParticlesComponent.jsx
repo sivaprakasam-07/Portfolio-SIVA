@@ -15,7 +15,7 @@ const ParticlesComponent = () => {
             options={{
                 background: { color: "#000000" },
                 particles: {
-                    number: { value: 80, density: { enable: true, area: 800 } }, // Reduced particle count
+                    number: { value: 120, density: { enable: true, area: 800 } }, // Reduced particle count
                     color: { value: "#ffffff" }, // White color
                     shape: { type: "triangle" },
                     opacity: { value: 0.7, random: true },
