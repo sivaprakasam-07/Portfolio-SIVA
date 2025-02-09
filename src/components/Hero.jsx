@@ -22,7 +22,7 @@ const Hero = ({ sectionsRef }) => {
         {/* Buttons */}
         <div className="flex gap-4 mb-12 justify-center">
           <a
-            href="./Public/Sivaprakasam_T-Resume.pdf" // Replace with the actual path to your resume file
+            href="Public\Sivaprakasam_T-Resume.pdf" // Replace with the actual path to your resume file
             download="Sivaprakasam_T_Resume.pdf" // The name of the downloaded file
             className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
           >
