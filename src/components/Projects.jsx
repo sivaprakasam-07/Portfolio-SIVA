@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import PixelTransition from './PixelTransition';
 
 const projects = [
   {
@@ -38,10 +39,6 @@ const Projects = ({ sectionsRef }) => {
     },
   };
 
-  const hoverVariants = {
-    hover: { scale: 1.05, rotateY: 10, rotateX: 10, transition: { duration: 0.3 } },
-  };
-
   return (
     <section
       id="projects"
@@ -52,30 +49,29 @@ const Projects = ({ sectionsRef }) => {
         <h2 className="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
           Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="group rounded-2xl overflow-hidden shadow-lg bg-gray-800 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              whileHover="hover"
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
+              {/* Image Section with Pixel Transition */}
+              <div className="w-full h-[350px] overflow-hidden">
+                <PixelTransition
+                  firstContent={<img src={project.image} alt={project.title} className="w-full h-full object-cover object-center" loading="lazy" />}
+                  secondContent={<div className="flex items-center justify-center w-full h-full bg-gray-900 text-white text-xl font-bold">{project.title}</div>}
+                  gridSize={7}
+                  pixelColor="#ffffff"
+                  animationStepDuration={0.3}
+                  className="w-full h-full"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
               </div>
+              {/* Content Section */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  {project.title}
-                </h3>
                 <p className="text-gray-300 mb-6">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, idx) => (
