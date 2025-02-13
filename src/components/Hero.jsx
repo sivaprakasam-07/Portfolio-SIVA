@@ -88,7 +88,7 @@ const Hero = ({ sectionsRef }) => {
           variants={containerVariants}
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/sivaprakasam-07"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
