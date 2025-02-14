@@ -6,15 +6,13 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import SplashCursor from "./components/SplashCursor"; // Import SplashCursor
+import Contact from "./components/Contact"; // Import SplashCursor
 
 const App = () => {
   const sectionsRef = useRef([]);
 
   return (
     <div>
-      <SplashCursor /> {/* Add SplashCursor component */}
       <Navbar sectionsRef={sectionsRef} />
       <Hero sectionsRef={sectionsRef} />
       <About sectionsRef={sectionsRef} />
